@@ -19,6 +19,15 @@ rm(pkg)
 
 
 
+# Load data ---------------------------------------------------------------
+# I recomend you using the package here
+dta<-read.table(here("stores","US90.txt"), sep="", header=TRUE)
+
+
+# plot data ---------------------------------------------------------------
+
+ggplot(dta) +
+	geom_line(aes(x=gdpgr,y=gdpcapgr))
 
 # estadisticas descriptivas  ---------------------------------------------------------------
 
