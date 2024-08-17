@@ -29,3 +29,7 @@ dta<-read.table(here("stores","US90.txt"), sep="", header=TRUE)
 ggplot(dta) +
 	geom_line(aes(x=gdpgr,y=gdpcapgr))
 
+# estadisticas descriptivas  ---------------------------------------------------------------
+
+stargazer::stargazer(dta)
+
