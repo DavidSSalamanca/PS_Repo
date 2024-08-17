@@ -13,7 +13,7 @@ local({r <- getOption("repos"); r["CRAN"] <- "http://cran.r-project.org"; option
 
 
 # Load Packages -----------------------------------------------------------
-pkg<-list("dplyr","here")
+pkg<-list("tidyverse","here")
 lapply(pkg, require, character.only=T)
 rm(pkg)
 
@@ -26,4 +26,6 @@ dta<-read.table(here("stores","US90.txt"), sep="", header=TRUE)
 
 # plot data ---------------------------------------------------------------
 
-plot(dta$gdpgr, dta$gdpcapgr, pch="*")
+ggplot(dta) +
+	geom_line(aes(x=gdpgr,y=gdpcapgr))
+
